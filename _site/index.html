@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <title>VA Website Template</title>
+  <title></title>
 
   <meta property="og:title" content="((TITLE))">
   <meta property="og:url" content="((URL))">
@@ -230,7 +230,27 @@
 <!-- END USWDS Header, extended-->
       
         <main>
-            <div style="height: 200px;"></div>
+
+          <section id="page--bios" class="usa-section small-padding padding-bottom-3">
+            <div class="grid-container">
+                <div class="grid-row tablet:grid-col-12 bio-card">
+                    <div class="grid-col-12 tablet:grid-col-12 tablet-lg:grid-col-3 bio-card">
+                        <img src="" alt="">
+                    </div>
+                    <div class="grid-col-12 tablet:grid-col-12 tablet-lg:grid-col-9 margin-bottom-5 padding-left-3 bio-card-attributes">
+						<h1 id="target" class="padding-bottom-0 margin-bottom-0"></h1>
+						<h3 class="padding-top-0 padding-bottom-0 margin-top-0 margin-bottom-1"></h3>
+						<h4 class="margin-top-0 margin-bottom-0 job"></h4>
+						<h4 class="margin-top-0 margin-bottom-0 office"></h4>
+                    </div>
+                </div>
+                <div class="grid-row tablet:grid-col-12 bio-card-description">
+					<h4 class="font-body-lg margin-top-3 margin-bottom-1 project"></h4>
+					<p class="font-body-lg bio"></p>
+                </div>
+            </div>
+          </section>
+
         </main>
 
         <!-- USDWS Footer, medium custom -->
@@ -369,6 +389,8 @@
     <script src="assets/uswds/js/uswds.min.js"></script>
     <script src="assets/js/vendors/lazy/jquery.lazy.min.js"></script>
     <script src="assets/js/functions.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="assets/js/mustache-json-render.js"></script>
 
   </body>
 </html>
