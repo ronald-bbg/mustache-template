@@ -1,5 +1,8 @@
 // JSON objects
 let homeView = {
+  id: "home-view",
+  sif: "current",
+  fellow: "sif",
   img: "assets/images/taylor_hooker.jpg",
   alt: "Photo of Taylor Hooker",
   bio_name: "Taylor Hooker, M.S., CTRS, NBC-HWC",
@@ -11,6 +14,9 @@ let homeView = {
 };
 
 let willView = {
+  id: "will-view",
+  sif: "alumni",
+  fellow: "erf",
   img: "https://ca.slack-edge.com/T02EBFK0DRN-U056K07DFFY-797e0c0c21af-192",
   alt: "Photo of Taylor Hooker",
   bio_name: "Will Elder",
@@ -22,6 +28,9 @@ let willView = {
 };
 
 let jimView = {
+  id: "jim-view",
+  sif: "alumni",
+  fellow: "erf",
   img: "https://ca.slack-edge.com/T02EBFK0DRN-U049YSAQSJ1-g734f0e766a3-192",
   alt: "Photo of Taylor Hooker",
   bio_name: "Jim Strommer",
