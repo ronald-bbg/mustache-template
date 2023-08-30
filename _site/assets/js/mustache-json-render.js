@@ -1,16 +1,16 @@
 // JSON objects
-let homeView = {
-  id: "home-view",
+let ronaldView = {
+  id: "ronald-view",
   sif: "current",
-  fellow: "sif",
-  img: "assets/images/taylor_hooker.jpg",
+  fellow: "erf",
+  img: "https://ca.slack-edge.com/T02EBFK0DRN-U05DPCV4945-d7f6040af781-72",
   alt: "Photo of Taylor Hooker",
-  bio_name: "Taylor Hooker, M.S., CTRS, NBC-HWC",
+  bio_name: "Ronald Ponferrada",
   title: "2023 Entrepreneur in Residence",
   job: "Health Systems Specialist",
   office: "VHA Office of Health Equity",
   project: "Empowering Innovation in Recreation Therapy",
-  bio: "Taylor Hooker is a certified Recreation Therapist and Health Coach serving as a Health Systems Specialist for Veterans Healthcare Administration (VHA) Office of Health Equity in VA Central Office (VACO). Taylor is a 4th-year doctoral student whose studies center on nonpharmacological approaches to Veterans' lifelong health and wellness. Empowering Innovation in Recreation Therapy supports the formation of an integrative research, mentorship, evidence-based practice and dissemination program beginning at a regional, and eventually national, footprint to support the advancement of RT service provision at VHA. Through partnership with academic allies, various VHA medical centers and VACO program offices, this robust quality improvement project will lead to improved patient care, clinician & client satisfaction and increased evidence-based practice."
+  bio: "Ronald Ponferrada is a certified Recreation Therapist and Health Coach serving as a Health Systems Specialist for Veterans Healthcare Administration (VHA) Office of Health Equity in VA Central Office (VACO)."
 };
 
 let willView = {
@@ -24,7 +24,7 @@ let willView = {
   job: "Health Systems Specialist",
   office: "VHA Office of Health Equity",
   project: "Empowering Innovation in Recreation Therapy",
-  bio: "Taylor Hooker is a certified Recreation Therapist and Health Coach serving as a Health Systems Specialist for Veterans Healthcare Administration (VHA) Office of Health Equity in VA Central Office (VACO). Taylor is a 4th-year doctoral student whose studies center on nonpharmacological approaches to Veterans' lifelong health and wellness. Empowering Innovation in Recreation Therapy supports the formation of an integrative research, mentorship, evidence-based practice and dissemination program beginning at a regional, and eventually national, footprint to support the advancement of RT service provision at VHA. Through partnership with academic allies, various VHA medical centers and VACO program offices, this robust quality improvement project will lead to improved patient care, clinician & client satisfaction and increased evidence-based practice."
+  bio: "Will Elder is a certified Recreation Therapist and Health Coach serving as a Health Systems Specialist for Veterans Healthcare Administration (VHA) Office of Health Equity in VA Central Office (VACO)."
 };
 
 let jimView = {
@@ -38,22 +38,23 @@ let jimView = {
   job: "Health Systems Specialist",
   office: "VHA Office of Health Equity",
   project: "Empowering Innovation in Recreation Therapy",
-  bio: "Taylor Hooker is a certified Recreation Therapist and Health Coach serving as a Health Systems Specialist for Veterans Healthcare Administration (VHA) Office of Health Equity in VA Central Office (VACO). Taylor is a 4th-year doctoral student whose studies center on nonpharmacological approaches to Veterans' lifelong health and wellness. Empowering Innovation in Recreation Therapy supports the formation of an integrative research, mentorship, evidence-based practice and dissemination program beginning at a regional, and eventually national, footprint to support the advancement of RT service provision at VHA. Through partnership with academic allies, various VHA medical centers and VACO program offices, this robust quality improvement project will lead to improved patient care, clinician & client satisfaction and increased evidence-based practice."
+  bio: "Jim Strommer is a certified Recreation Therapist and Health Coach serving as a Health Systems Specialist for Veterans Healthcare Administration (VHA) Office of Health Equity in VA Central Office (VACO)."
 };
 
 
 // Output variables
 var tab;
+var img;
+var alt;
 var bio_name;
+var title;
 var job;
 var office;
 var project;
-var title;
-var img;
-var alt;
+var bio;
 
 
-// Output logic
+// Output mustache js logic
 if (window.location.href.indexOf("will-elder") > -1) {
 
   tab = Mustache.render("{{bio_name}}", willView);
@@ -78,19 +79,19 @@ if (window.location.href.indexOf("will-elder") > -1) {
   project = Mustache.render("Project: {{project}}", jimView);
   bio = Mustache.render("{{{bio}}}", jimView);
 
-} else {
+} else if (window.location.href.indexOf("ronald-ponferrada") > -1) {
 
-  tab = Mustache.render("{{bio_name}}", homeView);
-  img = Mustache.render("{{{img}}}", homeView);
-  alt = Mustache.render("{{alt}}", homeView);
-  bio_name = Mustache.render("{{bio_name}}", homeView);
-  title = Mustache.render("{{title}}", homeView);
-  job = Mustache.render("{{job}}", homeView);
-  office = Mustache.render("{{office}}", homeView);
-  project = Mustache.render("Project: {{project}}", homeView);
-  bio = Mustache.render("{{{bio}}}", homeView);
+  tab = Mustache.render("{{bio_name}}", ronaldView);
+  img = Mustache.render("{{{img}}}", ronaldView);
+  alt = Mustache.render("{{alt}}", ronaldView);
+  bio_name = Mustache.render("{{bio_name}}", ronaldView);
+  title = Mustache.render("{{title}}", ronaldView);
+  job = Mustache.render("{{job}}", ronaldView);
+  office = Mustache.render("{{office}}", ronaldView);
+  project = Mustache.render("Project: {{project}}", ronaldView);
+  bio = Mustache.render("{{{bio}}}", ronaldView);
 
-}
+} 
 
 
 // Render json data dynamically
@@ -103,3 +104,43 @@ $('.bio-card-attributes > h4.job').text(job);
 $('.bio-card-attributes > h4.office').text(office);
 $('.bio-card-description > h4.project').text(project);
 $('.bio-card-description > p.bio').text(bio);
+
+
+// Render dynamic carousel for CURRENT fellows
+var currentFellowsArray = new Array(willView, jimView, ronaldView);
+var newCurrentFellowsArray = [];
+
+for (var i = 0; i < currentFellowsArray.length; i++) {
+  if (currentFellowsArray[i].sif == "current") {
+    newCurrentFellowsArray.push(currentFellowsArray[i]);
+    console.log(newCurrentFellowsArray);
+  }
+}
+
+var currentData = {
+  data: []
+};
+
+currentData.data.push(newCurrentFellowsArray);  
+
+currentData.data[0].forEach(current => $('.current--fellows').append("<div class='usa-card__container item grid-col-12 tablet:grid-col-3 tablet-lg:grid-col-3'>" + "<div class='usa-card__media usa-card__media--inset' >" + "<div class=''>" + "<img src='" + current.img + "'alt='" + current.title + "' />" + "</div>" + "</div>" + "<div class='usa-card__body'>" + "<h4>" + current.title + "</h4>" + "<p>" + current.bio + "</p>" + "</div>" + "</div>")); 
+
+
+// Render dynamic carousel for ALUMNI fellows
+var alumniFellowsArray = new Array(willView, jimView, ronaldView);
+var newAlumniFellowsArray = [];
+
+for (var i = 0; i < alumniFellowsArray.length; i++) {
+  if (alumniFellowsArray[i].sif == "alumni") {
+    newAlumniFellowsArray.push(alumniFellowsArray[i]);
+    console.log(newAlumniFellowsArray);
+  }
+}
+
+var alumniData = {
+  data: []
+};
+  
+alumniData.data.push(newAlumniFellowsArray);  
+
+alumniData.data[0].forEach(alumni => $('.alumni--fellows').append("<div class='usa-card__container item grid-col-12 tablet:grid-col-3 tablet-lg:grid-col-3'>" + "<div class='usa-card__media usa-card__media--inset' >" + "<div class=''>" + "<img src='" + alumni.img + "'alt='" + alumni.title + "' />" + "</div>" + "</div>" + "<div class='usa-card__body'>" + "<h4>" + alumni.title + "</h4>" + "<p>" + alumni.bio + "</p>" + "</div>" + "</div>")); 
