@@ -1,12 +1,12 @@
 // JSON objects
 let ronaldView = {
   id: "ronald-view",
-  sif: "current",
-  fellow: "erf",
+  fellow_type: "sif",
+  fellow_status: "current",
   img: "https://ca.slack-edge.com/T02EBFK0DRN-U05DPCV4945-d7f6040af781-72",
   alt: "Photo of Taylor Hooker",
   bio_name: "Ronald Ponferrada",
-  title: "2023 Entrepreneur in Residence",
+  title: "2023 Senior Innovation Fellow",
   job: "Health Systems Specialist",
   office: "VHA Office of Health Equity",
   project: "Empowering Innovation in Recreation Therapy",
@@ -15,8 +15,8 @@ let ronaldView = {
 
 let willView = {
   id: "will-view",
-  sif: "alumni",
-  fellow: "erf",
+  fellow_type: "eir",
+  fellow_status: "alumni",
   img: "https://ca.slack-edge.com/T02EBFK0DRN-U056K07DFFY-797e0c0c21af-192",
   alt: "Photo of Taylor Hooker",
   bio_name: "Will Elder",
@@ -29,8 +29,8 @@ let willView = {
 
 let jimView = {
   id: "jim-view",
-  sif: "alumni",
-  fellow: "erf",
+  fellow_type: "eir",
+  fellow_status: "alumni",
   img: "https://ca.slack-edge.com/T02EBFK0DRN-U049YSAQSJ1-g734f0e766a3-192",
   alt: "Photo of Taylor Hooker",
   bio_name: "Jim Strommer",
@@ -111,7 +111,7 @@ var currentFellowsArray = new Array(willView, jimView, ronaldView);
 var newCurrentFellowsArray = [];
 
 for (var i = 0; i < currentFellowsArray.length; i++) {
-  if (currentFellowsArray[i].sif == "current") {
+  if (currentFellowsArray[i].fellow_status == "current") {
     newCurrentFellowsArray.push(currentFellowsArray[i]);
     console.log(newCurrentFellowsArray);
   }
@@ -131,7 +131,7 @@ var alumniFellowsArray = new Array(willView, jimView, ronaldView);
 var newAlumniFellowsArray = [];
 
 for (var i = 0; i < alumniFellowsArray.length; i++) {
-  if (alumniFellowsArray[i].sif == "alumni") {
+  if (alumniFellowsArray[i].fellow_status == "alumni" && alumniFellowsArray[i].fellow_type == "eir") {
     newAlumniFellowsArray.push(alumniFellowsArray[i]);
     console.log(newAlumniFellowsArray);
   }
