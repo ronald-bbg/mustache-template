@@ -1,3 +1,16 @@
+
+#all--fellows {
+  padding: 5% 10%;
+}
+
+#all--news {
+  padding: 0 10% 10%;
+}
+
+#all--fellows a, #all--news a {
+  text-decoration: none !important;
+}
+
 #page--bios .bio-card {
     font-family: sans-serif !important;
 
@@ -27,4 +40,11 @@
         font-weight: bold;;
     }
 }
-  
+
+#all--fellows .usa-card__media img {
+  min-width: 200px;
+}
+
+
+
+

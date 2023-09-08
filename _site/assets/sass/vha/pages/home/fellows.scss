@@ -1,9 +1,13 @@
 
 #all--fellows {
-  padding: 10%;
+  padding: 5% 10%;
 }
 
-#all--fellows a {
+#all--news {
+  padding: 0 10% 10%;
+}
+
+#all--fellows a, #all--news a {
   text-decoration: none !important;
 }
 
@@ -35,6 +39,10 @@
     p.project {
         font-weight: bold;;
     }
+}
+
+#all--fellows .usa-card__media img {
+  min-width: 200px;
 }
 
 

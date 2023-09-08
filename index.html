@@ -24,30 +24,19 @@
 
   <body>
 
-    <!-- SITE WRAPPER - START -->
-    <div class="site-wrapper">
-      {% include "header.html" %}
-      
-        <main>
+    <main>
 
-          <section id="current--fellows" class="usa-section small-padding padding-bottom-3">
-            <h1>
-              Current Fellows (SIR or EIR)
-            </h1>
-            <div class="current--fellows"></div>
+      <!-- SITE WRAPPER - START -->
+      <div class="site-wrapper">
+          {% include "header.html" %}
+    
+          {% include "fellows.html" %}
 
-            <h1>
-              Alumni | 2023 Entrepreneur in Residence Fellows
-            </h1>
-            <div class="alumni--fellows grid-row"></div>
-          </section>
+          {% include "footer.html" %}
+      </div>
+      <!-- SITE WRAPPER - END -->
 
-        </main>
-
-        {% include "footer.html" %}
-
-    </div>
-    <!-- SITE WRAPPER - END -->
+    </main>
 
     <script src="assets/uswds/js/uswds.min.js"></script>
     <script src="assets/js/vendors/lazy/jquery.lazy.min.js"></script>

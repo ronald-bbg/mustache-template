@@ -94,7 +94,7 @@ var newCurrentFellowsArray = [];
 for (var i = 0; i < currentFellowsArray.length; i++) {
   if (currentFellowsArray[i].fellow_status == "current") {
     newCurrentFellowsArray.push(currentFellowsArray[i]);
-    console.log(newCurrentFellowsArray);
+    // console.log(newCurrentFellowsArray);
   }
 }
 
@@ -114,7 +114,7 @@ var newAlumniFellowsArray = [];
 for (var i = 0; i < alumniFellowsArray.length; i++) {
   if (alumniFellowsArray[i].fellow_status == "alumni" && alumniFellowsArray[i].fellow_type == "eir") {
     newAlumniFellowsArray.push(alumniFellowsArray[i]);
-    console.log(newAlumniFellowsArray);
+    // console.log(newAlumniFellowsArray);
   }
 }
 
@@ -125,3 +125,5 @@ var alumniData = {
 alumniData.data.push(newAlumniFellowsArray);  
 
 alumniData.data[0].forEach(alumni => $('.alumni--fellows').append("<div class='grid-col-12 tablet:grid-col-3 tablet-lg:grid-col-3'>" + "<a href=/fellow/index.html?user=" + alumni.id + " />" + "<div class='usa-card__container item'>" + "<div class='usa-card__media usa-card__media--inset' >" + "<div class=''>" + "<img src='" + alumni.img + "'alt='" + alumni.title + "' />" + "</div>" + "</div>" + "<div class='usa-card__body'>" + "<h4>" + alumni.title + "</h4>" + "<p>" + alumni.bio + "</p>" + "</div>" + "</div>" + "</a>" + "</div>")); 
+
+
