@@ -2,30 +2,16 @@ var newsData = {
 
     "data": [
         {
-            "id1": "will-elder",
-            "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img53-THooker_DifferencesInDisabilities.jpg",
+            "id1": "jim-strommer",
+            "id2": "ronald-ponferrada",
+            "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img52-THooker_30under30.jpg",
             "title": "ALO1 Cultural Foundation: COVID-19 Hero Awards",
             "url": "https://covid19heroawards.com/project/taylor-hooker-a-recreation-therapist/",
             "description": "The inaugural 2020 COVID-19 Hero Awards are a small gesture to honor the hard work of everyone fighting this pandemic."
         },
         {
-            "id1": "will-elder",
-            "id2": "jim-strommer",
-            "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img53-THooker_DifferencesInDisabilities.jpg",
-            "title": "ALO2 Cultural Foundation: COVID-19 Hero Awards",
-            "url": "https://covid19heroawards.com/project/taylor-hooker-a-recreation-therapist/",
-            "description": "The inaugural 2020 COVID-19 Hero Awards are a small gesture to honor the hard work of everyone fighting this pandemic."
-        },
-        {
-            "id1": "will-elder",
-            "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img53-THooker_DifferencesInDisabilities.jpg",
-            "title": "ALO3 Cultural Foundation: COVID-19 Hero Awards",
-            "url": "https://covid19heroawards.com/project/taylor-hooker-a-recreation-therapist/",
-            "description": "The inaugural 2020 COVID-19 Hero Awards are a small gesture to honor the hard work of everyone fighting this pandemic."
-        },
-        {
-            "id1": "ronald-ponferrada",
-            "id2": "jim-strommer",
+            "id1": "jim-strommer",
+            "id2": "ronald-ponferrada",
             "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img59-THooker_COVID19HeroAwards.jpg",
             "title": "ALO2 Cultural Foundation: COVID-19 Hero Awards",
             "url": "https://covid19heroawards.com/project/taylor-hooker-a-recreation-therapist/",
@@ -35,18 +21,32 @@ var newsData = {
             "id1": "jim-strommer",
             "id2": "ronald-ponferrada",
             "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img52-THooker_30under30.jpg",
-            "title": "ALO1 Cultural Foundation: COVID-19 Hero Awards",
+            "title": "ALO3 Cultural Foundation: COVID-19 Hero Awards",
             "url": "https://covid19heroawards.com/project/taylor-hooker-a-recreation-therapist/",
             "description": "The inaugural 2020 COVID-19 Hero Awards are a small gesture to honor the hard work of everyone fighting this pandemic."
         },
         {
-            "id1": "jim-strommer",
-            "id2": "ronald-ponferrada",
-            "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img52-THooker_30under30.jpg",
-            "title": "ALO1 Cultural Foundation: COVID-19 Hero Awards",
+            "id1": "will-elder",
+            "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img53-THooker_DifferencesInDisabilities.jpg",
+            "title": "BLO1 Cultural Foundation: COVID-19 Hero Awards",
             "url": "https://covid19heroawards.com/project/taylor-hooker-a-recreation-therapist/",
             "description": "The inaugural 2020 COVID-19 Hero Awards are a small gesture to honor the hard work of everyone fighting this pandemic."
-        }                                         
+        },
+        {
+            "id1": "will-elder",
+            "id2": "jim-strommer",
+            "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img53-THooker_DifferencesInDisabilities.jpg",
+            "title": "BLO2 Cultural Foundation: COVID-19 Hero Awards",
+            "url": "https://covid19heroawards.com/project/taylor-hooker-a-recreation-therapist/",
+            "description": "The inaugural 2020 COVID-19 Hero Awards are a small gesture to honor the hard work of everyone fighting this pandemic."
+        },
+        {
+            "id1": "will-elder",
+            "img": "https://www.innovation.va.gov/ecosystem/assets/images/IE/news-events/neFellowship-Img53-THooker_DifferencesInDisabilities.jpg",
+            "title": "BLO3 Cultural Foundation: COVID-19 Hero Awards",
+            "url": "https://covid19heroawards.com/project/taylor-hooker-a-recreation-therapist/",
+            "description": "The inaugural 2020 COVID-19 Hero Awards are a small gesture to honor the hard work of everyone fighting this pandemic."
+        }                                       
     ]
 
 }
@@ -75,10 +75,25 @@ for (var i = 0; i < newsJsonData.length; i++) {
     }
 }
 
-newsPageData.data.forEach(news => $('.owl-carousel.page-news--grid').append("<div class='grid-col-12 item'>" + "<a href='" + news.url + "' />" + "<div class='usa-card__container item'>" + "<div class='usa-card__media usa-card__media--inset' >" + "<div class=''>" + "<img src='" + news.img + "'alt='" + news.title + "' />" + "</div>" + "</div>" + "<div class='usa-card__body'>" + "<h4>" + news.title + "</h4>" + "<p>" + news.description + "</p>" + "</div>" + "</div>" + "</a>" + "</div>")); 
+if (newsPageData.data.length > 3) {
+
+    newsPageData.data.forEach(news => $('.page-news--grid').append("<div class='usa-card__container item'>" + "<a href='" + news.url + "' />" + "<div class='usa-card__media usa-card__media--inset' >" + "<img src='" + news.img + "'alt='" + news.title + "' />" + "</div>" + "<div class='usa-card__body'>" + "<h4>" + news.title + "</h4>" + "<p>" + news.description + "</p>" + "</div>" + "</a>" + "</div>")); 
+
+} else {
+
+    newsPageData.data.forEach(news => $('.page-news--row').append("<div class='grid-col-4'>" + "<div class=' usa-card__container item'>" + "<a href='" + news.url + "' />" + "<div class='usa-card__media usa-card__media--inset' >" + "<img src='" + news.img + "'alt='" + news.title + "' />" + "</div>" + "<div class='usa-card__body'>" + "<h4>" + news.title + "</h4>" + "<p>" + news.description + "</p>" + "</div>" + "</a>" + "</div>" + "</div>")); 
+
+    $("#news-slider").hide();
+
+}
+
 
 $(".page-news--grid div:empty").remove();
 $(".page-news--grid h4:empty").remove();
 $(".page-news--grid p:empty").remove();
+
+$(".page-news--row div:empty").remove();
+$(".page-news--row h4:empty").remove();
+$(".page-news--row p:empty").remove();
 
 

@@ -230,11 +230,22 @@
 
                 <section id="page--news" class="usa-section small-padding padding-bottom-3">
                     <div class="grid-container">
-                        <h1>
-                            Their Work
-                        </h1>
-                        <div class="grid-row tablet:grid-col-12">
-                            <div class="owl-carousel page-news--grid grid-row"></div>
+                        <div class="grid-row">
+                            <h1>
+                                Their Work
+                            </h1>
+                        </div>
+                        <div class="grid-row">
+                            <div id="news-slider">
+                                <div class="MS-content page-news--grid"></div>
+                                <div class="MS-controls">
+                                    <button class="MS-left"><</button>
+                                    <button class="MS-right">></button>
+                                </div>
+                            </div>
+                            <div class="news-items">
+                                <div class="page-news--row grid-row"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -375,7 +386,7 @@
         <script src="https://unpkg.com/mustache@latest"></script>
         <script src="../assets/js/mustache-fellows-render.js"></script>
         <script src="../assets/js/json-news-render.js"></script>
-        <script src="../assets/js/vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="../assets/js/vendors/multislider/multislider.min.js"></script>
         <script src="../assets/js/functions.js"></script>
     </body>
 </html>

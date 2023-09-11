@@ -7,9 +7,11 @@
   padding: 0 10% 10%;
 }
 
-#all--fellows a, #all--news a {
+#all--fellows a, #all--news a, .news-slider a, .news-items a {
   text-decoration: none !important;
+  color: #000;
 }
+
 
 #page--bios .bio-card {
     font-family: sans-serif !important;
